@@ -2,7 +2,7 @@
 
 <img src="images/DevOpsMLOpsWelders150by150.png" alt="Two welders
     welding metal together.">
-<p>Automation Means: Work Smarter, Not Harder!</p>
+<p>Automation Means: Work Smarter, Not Harder! (picture is AI generated)</p>
 </div>
 
 ## Table of Contents
