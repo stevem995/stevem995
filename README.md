@@ -109,18 +109,25 @@ become stark. Paths to not interpret correctly, etc.
 
 ### Automation Windows ShortPath
 
-```
+
 In order to set up aliases in Git-Bash to work correctly, you must use
 the windows shortpath which is the fully qualified or absolute path.
 There are several way to do this. The easiest is to use a script that
 can print out the current path as a short path.
 
 shortpath.cmd
+```
 :: Display the short path of current directory.
 @ECHO OFF
 if '%1'=='' (%0 .) else echo %~s1
 ```
 
+You can then use that path in an alias
+```
+OPEN_OFFICE_WRITER="C:/PROGRA~2/OPENOF~1/program/swriter.exe "
+
+alias resume='${OPEN_OFFICE_WRITER} my-resume.odt &'
+```
 
 <div align="center">
   <p>Visitor count</p>
