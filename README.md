@@ -15,7 +15,8 @@
         - [Emacs Go Print Function](#emacs-go-print-function)
         - [Emacs Python3 Print Function](#emacs-python3-print-function)
         - [Emacs Powershell Print Function](#emacs-powershell-print-function)
-
+     - [Automation Windows](#automation-windows)
+          - [Automation Windows ShortPath](#automation-windows-shortpath)
 
 ## WHO AM I
 
@@ -50,17 +51,16 @@ Here are some ideas to get you started:
 
 ## Automation Tips and Tricks
 
-### Emacs Tips
+###  Emacs Tips
 
 ### Emacs Go Print Function
 
 ```
-Description: Creates an interactive Emacs GO function which which creates a
-GO styled print statement and places the cursor accordingly.
-Example: fmt.Println("")
-Usage: M-x goprin
-Installation: Place this in your .emacs file.
-
+; Description: Creates an interactive Emacs GO function which which creates a
+; GO styled print statement and places the cursor accordingly.
+; Example: fmt.Println("")
+; Usage: M-x goprin
+; Installation: Place this in your .emacs file.
 
 (defun goprin ()
   "defalias pyprin: Insert go print skeleton"
@@ -72,11 +72,11 @@ Installation: Place this in your .emacs file.
 ### Emacs Python3 Print Function
 
 ```
-Description: Creates an interactive Emacs Python print function which which creates a
-python3 styled print statement and places the cursor accordingly.
-Example: print("{}".format())
-Usage: M-x pyprin
-Installation: Place this in your .emacs file.
+; Description: Creates an interactive Emacs Python print function which which creates a
+; python3 styled print statement and places the cursor accordingly.
+; Example: print("{}".format())
+; Usage: M-x pyprin
+; Installation: Place this in your .emacs file.
 
 (defun pyprin ()
   "defalias pyprin: Insert python print skeleton"
@@ -88,17 +88,37 @@ Installation: Place this in your .emacs file.
 ### Emacs Powershell Print Function
 
 ```
-Description: Creates an interactive Emacs Powershell print function which which creates a
-Powershell styled print statement and places the cursor accordingly.
-Example: Write-Host ("{0}" -f )
-Usage: M-x pyprin
-Installation: Place this in your .emacs file.
+; Description: Creates an interactive Emacs Powershell print function which which creates a
+; Powershell styled print statement and places the cursor accordingly.
+; Example: Write-Host ("{0}" -f )
+; Usage: M-x pyprin
+; Installation: Place this in your .emacs file.
 
 (defun psprin ()
   "defalias psprin: Insert powershell print skeleton"
   (interactive)
   (insert "Write-Host \(\"\{0\}\" -f \)")
   (backward-char 9))
+```
+
+### Automation Windows
+
+Simple automation on windows is a bit tricky. This is especially true
+if you use Linux like programs such as git bash where the difference
+become stark. Paths to not interpret correctly, etc.
+
+### Automation Windows ShortPath
+
+```
+In order to set up aliases in Git-Bash to work correctly, you must use
+the windows shortpath which is the fully qualified or absolute path.
+There are several way to do this. The easiest is to use a script that
+can print out the current path as a short path.
+
+shortpath.cmd
+:: Display the short path of current directory.
+@ECHO OFF
+if '%1'=='' (%0 .) else echo %~s1
 ```
 
 
