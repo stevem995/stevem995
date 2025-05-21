@@ -16,7 +16,11 @@
         - [Emacs Python3 Print Function](#emacs-python3-print-function)
         - [Emacs Powershell Print Function](#emacs-powershell-print-function)
      - [Automation Windows](#automation-windows)
-          - [Automation Windows ShortPath](#automation-windows-shortpath)
+       - [Automation Windows ShortPath](#automation-windows-shortpath)
+   - [Workstation Tips and Tricks](#automation-tips-and-tricks)
+     - [Windows Tips](#windows-tips)
+        - [Git Bash Prompt and Title](#git-bash-prompt-and-title)
+
 
 ## WHO AM I
 
@@ -53,7 +57,7 @@ Here are some ideas to get you started:
 
 ###  Emacs Tips
 
-### Emacs Go Print Function
+### [Emacs Go Print Function](#emacs-go-print-function)
 
 ```
 ; Description: Creates an interactive Emacs GO function which which creates a
@@ -69,7 +73,7 @@ Here are some ideas to get you started:
   (backward-char 2))
 ```
 
-### Emacs Python3 Print Function
+### [Emacs Python3 Print Function](#emacs-python3-print-function)
 
 ```
 ; Description: Creates an interactive Emacs Python print function which which creates a
@@ -85,7 +89,7 @@ Here are some ideas to get you started:
   (backward-char 13))
 ```
 
-### Emacs Powershell Print Function
+### [Emacs Powershell Print Function](#emacs-powershell-print-function)
 
 ```
 ; Description: Creates an interactive Emacs Powershell print function which which creates a
@@ -107,7 +111,7 @@ Simple automation on windows is a bit tricky. This is especially true
 if you use Linux like programs such as git bash where the difference
 become stark. Paths to not interpret correctly, etc.
 
-### Automation Windows ShortPath
+### [Automation Windows ShortPath](#automation-windows-shortpath)
 
 
 In order to set up aliases in Git-Bash to work correctly, you must use
@@ -127,6 +131,42 @@ You can then use that path in an alias
 OPEN_OFFICE_WRITER="C:/PROGRA~2/OPENOF~1/program/swriter.exe "
 
 alias resume='${OPEN_OFFICE_WRITER} my-resume.odt &'
+```
+
+### Workstation Tips and Tricks
+
+### Windows Tips
+
+Windows Tips focus on windows desktop tool customizations. This
+includes changing prompts or removing your username from view.
+
+### [Git Bash Prompt and Title](#git-bash-prompt-and-title)
+
+To customize the Git Bash prompt you must find and modify the
+git-prompt\.sh file(NOTE: this file cannot be modified from within
+git-bash while it is running. Use an outside editor).
+
+```
+1. To find where git-prompt is installed open the Git Bash app's
+   properties. This is buried by Microsoft for some unknown reason.
+   The easiest way to find it is to add the app to the task bar. From
+   there, you can right click for the properties menu.
+   1. Open the start menu and search for Git Bash.
+   2. Right click the icon and pin it to the task bar.
+   3. Right click the Git Bash icon on the task bar.
+   4. Right click the Git Bash icon in the menu
+   5. select properties.
+   6. Note the path, this is where git-prompt.sh is installed.
+2. Edit the git-prompt.sh file's PS1 variable commenting and removing
+   lines as needed e.g:
+
+    PS1='\[\033]0;\h:$PWD\007\]' # set window title
+    PS1="$PS1"'\[\033[32m\]'       # change to green
+    PS1="$PS1"'\h [\D{%m/%d/%g:%I:%M:%S:%p]}'  # host<space>Time stamp
+    PS1="$PS1"'\[\033[0m\]'        # change color
+    PS1="$PS1"': '                 # prompt: always : at end.
+
+
 ```
 
 <div align="center">
