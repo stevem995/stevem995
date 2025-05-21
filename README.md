@@ -157,6 +157,7 @@ git-bash while it is running. Use an outside editor).
    4. Right click the Git Bash icon in the menu
    5. select properties.
    6. Note the path, this is where git-prompt.sh is installed.
+   7. git-prompt.sh is usually found in etc/profile.d subdirectory
 2. Edit the git-prompt.sh file's PS1 variable commenting and removing
    lines as needed e.g:
 
