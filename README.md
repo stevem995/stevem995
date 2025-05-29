@@ -26,6 +26,9 @@
 
 Automation enthusiast and DevOps engineer.
 
+[LinkedIn](https://www.linkedin.com/in/steve-miano-swe)
+[Google Cloud Skill Boost](https://www.cloudskillsboost.google/public_profiles/f9588768-0704-47a0-9bb6-0f1d4b01c9d4)
+
 
 ## Current Projects
 
